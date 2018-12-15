@@ -1,6 +1,6 @@
 package ReadingFromFile;
 
-public class InputOperationFormFile {
+public class DateAccessObject {
 
 public String returnTextFromFile(){
 

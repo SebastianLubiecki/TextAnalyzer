@@ -28,19 +28,19 @@ public class AnalyzerNumberOfWordTest {
         assertEquals(expected, actual);
     }
     @Test
-    public void testOfEmptyString(){
-        int expected =0;
+    public void testOfEmptyString(){ //??
+        int expected =1;
         int actual =analyzerNumberOfWord.analyze("");
         assertEquals(expected, actual);
     }
 
     @Test
     public void testOfNullString(){
-
         try {
             analyzerNumberOfWord.analyze(null);
             fail();
-        }catch (InputMismatchException e){
+
+        }catch (InputMismatchException | NullPointerException e ){
             System.out.println("Wrong input");
         }
     }

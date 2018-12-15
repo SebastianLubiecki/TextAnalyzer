@@ -2,9 +2,7 @@ import AnalyzerImplementation.AnalyzerLongestWordInText;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.InputMismatchException;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -20,16 +18,17 @@ public class AnalyzerLongestWordInTextTest {
 
     @Test
     public void testOfGoodStringOnInput() {
-        Map<String, Integer> mapWithStringValue = new HashMap<>();
-        mapWithStringValue.put("Seb", 4);
-        mapWithStringValue.put("Lub", 3);
-        assertEquals(analyzerLongestWordInText.analyze("Seb Lub Lub Seb Seb Lub Seb"), mapWithStringValue);
+        List <String> listOfString = new ArrayList<>();
+        listOfString.add("Seb");
+        listOfString.add("Lub");
+        assertEquals(analyzerLongestWordInText.analyze("Seb Lub Lub Seb Seb Lub Seb"), listOfString);
     }
 
     @Test
     public void testOfEmptyStringOnInput() {
-        Map<String, Integer> mapWithStringValue = new HashMap<>();
-        assertEquals(analyzerLongestWordInText.analyze(""), mapWithStringValue);
+        List <String> listOfString = new ArrayList<>();
+        listOfString.add("");
+        assertEquals(analyzerLongestWordInText.analyze(""), listOfString);
     }
 
     @Test
@@ -38,7 +37,7 @@ public class AnalyzerLongestWordInTextTest {
         try {
             analyzerLongestWordInText.analyze(null);
             fail();
-        }catch (InputMismatchException e){
+        }catch (InputMismatchException  | NullPointerException e){
             System.out.println("Wrong input");
         }
     }
